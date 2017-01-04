@@ -1,0 +1,373 @@
+/*
+Design by Metamorphosis Design
+http://www.metamorphozis.com
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+*
+{
+margin: 0px;
+padding: 0px;
+}
+
+a:link {
+	color: #ffffff;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+a:visited {
+	color: #ffffff;
+}
+
+body {
+	
+	background: #FFFFFF url(images/back_all.gif);
+	font: 13px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	color: #333333;
+}
+
+#content
+{
+	margin: 0 auto;
+	width: 90%;
+	border: 15px solid #ffffff;
+}
+
+.msg_done
+{
+	background-color:#F00;
+	color:#FFF;
+	font-size: 16px;
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-weight:bold;
+}
+#header {
+	height: 348px;
+	width: 100%;
+	background:#044269;
+}
+input[type=text],
+input[type=password],
+select,
+
+textarea{
+		background: #fff;
+		border: 2px solid #009;
+		padding: 4px 8px;
+		margin: 2px 0px;
+		font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+		font-size:18px;
+		font-weight:bold;
+		width: 250px;
+	
+		}
+
+input[type=text]:focus,
+input[type=password]:focus{
+		background: #f8f8f8;
+		}
+input[type=submit],
+input[type=reset]
+{
+	width: 150px;
+	height: 50px;
+	border: 2px solid #900; 
+	background:#006;
+	color:#FFF;
+	cursor:pointer;
+	text-transform:capitalize;
+	font-size:20px;
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-weight:bold;
+}
+input[type=submit]:hover,
+input[type=reset]:hover
+{
+	font-size: 22px;
+}
+#menu
+{
+width: 100%;
+height: 71px;
+background: url(images/menu.gif) repeat-x;
+}
+
+#menu ul {
+	list-style: none;	
+}
+
+#menu li {
+	
+	display: inline; 
+	
+}
+
+#menu a {
+	float: left;
+	width: 100px;
+	height: 45px;
+    display: block;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 16px;
+	text-transform: uppercase;
+	padding-top: 26px;
+}
+
+#menu a:hover {
+	width: 100px;
+    height: 45px;
+	color: #DAFAC9;
+	text-decoration: underline;
+	background: url(images/menu_r.gif) repeat-x;
+}
+
+
+.more
+{
+text-align: right;
+}
+
+
+#logo {
+width: 100%;
+height: 257px;
+text-align:  left;
+padding-top: 20px;
+background:#309;
+background: url(images/header.jpg) center no-repeat;
+}
+
+
+#logo a {
+	text-decoration: none;
+	text-transform: lowercase;
+	font-style: italic;
+	font-size: 18px;
+	color: #ffffff;
+}
+#logo H2 a
+{
+font-size: 12px;
+}
+
+#main
+{
+background: #ffffff url(images/table_back.gif) repeat-x top
+}
+
+#left
+{
+	padding-left: 10px;
+	padding-top: 10px;
+	width: 400px;
+}
+
+
+.left_back
+{
+background: url(images/back.png) repeat-y;
+padding-top: 10px;
+
+}
+#menu_table td
+{
+	
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size:18px;
+	color: #000;
+	width: 368px;
+	border: solid 2px #333399;
+}
+#menu_table td a
+{
+	
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size:18px;
+	color: #000;
+	width: 368px;
+	
+}
+#menu_table a:hover
+{
+	display:block;
+	background-color:#03C;
+	font-variant:normal;
+	color:#FFF;
+	width: 368px;
+	border: solid 2px #333399;
+}
+.bottom
+{
+background: url(images/bottom.png) no-repeat top;
+height: 16px;
+width: 400px;
+}
+
+#left H3
+{
+width: 400px;
+height: 24px;
+font-size: 14px;
+font-weight: bold;
+padding-left: 22px;
+padding-top: 15px;
+text-transform: uppercase;
+color: #ffffff;
+background: url(images/title.png) no-repeat
+}
+
+
+#left ul {
+	list-style: none;
+}
+
+#left li {
+	border: 0px;
+	margin-left: 10px;
+}
+
+
+#left .title_back
+{
+padding: 10px;
+}
+
+
+
+
+#left p
+{
+padding: 10px;
+padding-left: 20px;
+}
+
+
+#calendar1 {
+	padding: 0 10px 20px 10px;
+}
+
+#calendar table {
+	width: 100%;
+	text-align: center;
+}
+
+#calendar thead {
+
+}
+
+#calendar tbody td {
+	border: 1px solid #F1F1F1;
+}
+
+#calendar #prev {
+	text-align: left;
+}
+
+#calendar #next {
+	text-align: right;
+}
+
+#calendar tfoot a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#calendar #now {
+	background: #696969;
+	border: 1px solid #ff0000;
+	font-weight: bold;
+	color: #ffffff
+}
+
+#right
+{
+	float: right;
+	width: 750px;
+	padding-top: 10px;
+	margin-right: 50px;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size: 14px;
+}
+
+#right .box
+{
+border: 1px solid #C9C9C9;
+background: #ffffff;
+padding: 10px;
+margin-bottom: 10px;
+}
+
+#right ol, #right ul
+{
+	margin-left: 30px;
+	font-size: 12px;
+}
+
+#right H4
+{
+	margin: 0;
+	padding: 0px;
+	font-size: 12px;
+	color: #65A204;
+}
+
+#right a
+{
+color: #65A204;
+text-decoration: none;
+}
+
+#right p {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 10px;
+	color: #003399;
+}
+
+#right .date2 {
+	margin: 10px;
+	padding: 0;
+	padding-top: 5px;
+}
+
+#right h2 {
+	margin: 0;
+	padding: 0;
+	padding-top: 10px;
+	color: #65A204;
+}
+.date {
+	text-align: right;
+	color: #65A204;
+	font-size: 11px;
+}
+
+.date a {
+	color: #65A204;
+}
+
+
+#footer {
+	height: 60px;
+	clear: both;
+	padding-top: 30px;
+	background: url(images/footer.gif) repeat-x; 
+}
+
+#footer p {
+	margin: 0;
+	font-size: 10px;
+	text-align: center;
+	color: #ffffff;
+}
+
+#footer a {
+	color: #ffffff;
+}

@@ -1,0 +1,1158 @@
+//variables for further use
+
+<script src = "jsontry.js"> </script>
+<script>
+var up_var="0";
+var ur_var="0";
+var um_var="0";
+var ul1_var="0";
+var ul2_var="0";
+var ul3_var="0";
+var udr_var="0";
+var ut_var="0";
+var udep_var="0";
+var uca_var="0";
+var ugy_var="0";
+var ucec_var="0";
+var ubase_var="0";
+var uorg_var="0";
+var uph_var="0";
+var uec_var="0";
+var una_var="0";
+
+    function interPolateTOPO(perSlope, arr)
+    {
+    alert("ds") ;
+    var perSlope=perSlope;
+    var x = perSlope ;
+   
+      for(var i = 0; i < arr.length; i=i+2)  {
+    var flag = 0; 
+    var upper = arr[i].upper;
+    var lower = arr[i].lower;
+
+    if(x >= upper && x <= lower)  {
+        flag = i ;
+        break ;
+    }
+ }
+ 
+    var upper = arr[flag].upper;
+    var lower = arr[flag].lower;
+
+    var val1 = arr[flag+1].value1 ;
+    var val2 = arr[flag+1].value2 ;
+
+     valInter =  ( (val1 - val2) / (upper - lower) ) * (x - upper) + val1 ;
+     dispTopo(valInter) ;
+   // var ans = value   ;
+
+  }
+
+  function dispTopo(valInter) {
+    if(valInter>=75)
+      suitable="S1";
+
+    else if(valInter>50 && valInter<75)
+       suitable="S2";
+
+    else if(valInter>25 && valInter<50)
+       suitable="S3";
+
+    else if(this.valInter<25)
+        suitable="N";
+
+    up_var = valInter;
+    out="Interpolated Value : " + valInter +" " + "Suitability class by sys  Model: " + suitable;
+    document.getElementById("land").innerHTML=out;
+   }
+  
+
+ function sesameSysrain1(rain1)
+  {
+    this.rain1=rain1;
+   
+    sesameSysrain1.prototype.interPolate=function()
+    {
+      
+      if(this.rain1<600 && this.rain1>=500)
+      {
+        this.valInter=125 - 0.05*((this.rain1));
+        this.disp(this.valInter);
+      }
+
+      else if(this.rain1>=450&& this.rain1<500)
+      {
+        this.valInter=95 - 10*((this.rain1-450)/50);
+        this.disp(this.valInter);
+      }
+
+        else if(this.rain1>=400 && this.rain1<450)
+      {
+        this.valInter=285-0.5*((this.rain1));
+        this.disp(this.valInter);
+      }
+      else if(this.rain1>=300 && this.rain1<400)
+      {
+        this.valInter=60 - 0.15*(this.rain1-300);
+        this.disp(this.valInter);
+      }
+      else if(this.rain1>=300)
+      {
+        this.valInter=67.5 - 0.225*(this.rain1);
+        this.disp(this.valInter);
+      }
+      
+  }
+  sesameSysrain1.prototype.disp=function()
+  {
+    if(this.valInter>=75)
+      this.suitable="S1";
+
+    else if(this.valInter>=50 && this.valInter<75)
+       this.suitable="S2";
+
+    else if(this.valInter>=25 && this.valInter<50)
+       this.suitable="S3";
+
+    else if(this.valInter<25)
+          this.suitable="N";
+
+    ur_var = this.valInter;
+    this.out="Interpolated Value : " + this.valInter + " "  + "Suitability class by sys  Model: " + this.suitable;
+    
+   }
+  }
+
+function sesameSysMean1(temp1)
+  {
+    this.temp1=temp1;
+   
+    sesameSysMean1.prototype.interPolate=function()
+    {
+      
+      if(this.temp1<27 && this.temp1>=25)
+      {
+        this.valInter=162.5-2.5*(this.temp1)
+        this.disp(this.valInter);
+      }
+
+      else if(this.temp1>=27 && this.temp<28)
+      {
+        this.valInter=230 - 5*(this.temp1);
+        this.disp(this.valInter);
+      }
+
+        else if(this.temp1>=28 && this.temp1<30)
+      {
+        this.valInter=435-12.5*(this.temp1);
+        this.disp(this.valInter);
+      }
+      else if(this.temp1<38 && this.temp1>=30)
+      {
+        this.valInter=105- 0.15*(this.temp1);
+        this.disp(this.valInter);
+      }
+      
+      else if(this.temp1>=38)
+      {
+        this.valInter=45 - 6.43*(this.temp1-38);
+        this.disp(this.valInter);
+      }
+  
+    else if(this.temp1<25 && this.temp1>=24)
+      {
+        this.valInter= -25+ 5*(this.temp1);
+        this.disp(this.valInter);
+      }
+
+      else if(this.temp1>=20 && this.temp1<24)
+      {
+        this.valInter=35+2.5* (this.temp1);
+        this.disp(this.valInter);
+      }
+
+        else if(this.temp1>=20 && this.temp1<18)
+      {
+        this.valInter= -165+ 12.5*(this.temp1 );
+        this.disp(this.valInter);
+      }
+      else if(this.temp1>=16 &&this.temp1<18 )
+      {
+        this.valInter= -75+7.5*(this.temp1);
+        this.disp(this.valInter);
+      }
+      else if(this.temp1<16)
+      {
+        this.valInter=75-7.5*(this.temp1);
+        this.disp(this.valInter);
+      }
+      
+  }
+sesameSysMean1.prototype.disp=function()
+  {
+    if(this.valInter>=75)
+      this.suitable="S1";
+
+    else if(this.valInter>50 && this.valInter<75)
+       this.suitable="S2";
+
+    else if(this.valInter>25 && this.valInter<50)
+       this.suitable="S3";
+
+    else if(this.valInter<25)
+          this.suitable="N";
+
+     um_var=this.valInter;
+    this.out="Interpolated Value : " + this.valInter +" " + "Suitability class by sys  Model: " + this.suitable;
+    document.getElementById("mean").innerHTML=user2.out + "<br>" +this.out;
+   }
+  }
+
+   function sesameSyslength1(length1)
+  {
+    this.length1=length1;
+   
+    sesameSyslength1.prototype.interPolate=function()
+    {
+      if(this.length1>90)
+      {
+        this.valInter=150-0.5*(this.length1);
+        this.disp(this.valInter);
+      }
+      else if(this.length1>80 && this.length1<90)
+      {
+        this.valInter=175-(this.length1);
+        this.disp(this.valInter);
+      }
+
+      else if(this.length1<80 && this.length1>70)
+      {
+        this.valInter=260-2.5*(this.length1);
+        this.disp(this.valInter);
+      }
+
+        else if(this.length1<70&& this.length1>60)
+      {
+        this.valInter=150-1.5*(this.length1-60);
+        this.disp(this.valInter);
+      }
+      else if(this.length1<60)
+      {
+        this.valInter=70 - 0.5*(this.length1);
+        this.disp(this.valInter);
+      }
+     }
+      sesameSyslength1.prototype.disp=function()
+  {
+    if(this.valInter>=75)
+      this.suitable="S1";
+
+    else if(this.valInter>50 && this.valInter<75)
+       this.suitable="S2";
+
+    else if(this.valInter>25 && this.valInter<50)
+       this.suitable="S3";
+
+    else if(this.valInter<25)
+          this.suitable="N";
+
+    ul1_var=this.valInter;
+    this.out="Interpolated Value : " + this.valInter +" " +  "Suitability class by sys  Model: " + this.suitable;
+    
+     }
+  }
+
+  
+function sesameSyslength2(length2)
+  {
+    this.length2=length2;
+   
+    sesameSyslength2.prototype.interPolate=function()
+    {
+      
+      if(this.length2>120)
+      {
+        this.valInter=165 - 0.5*((this.length2));
+        this.disp(this.valInter);
+      }
+
+      else if(this.length2>100 && this.length2<120)
+       {
+        this.valInter= 145 - 0.5*(this.length2);
+        this.disp(this.valInter);
+      }
+
+      else if(this.length2>90 && this.length2<100)
+      {
+        this.valInter=310-2.5*(this.length2-90);
+        this.disp(this.valInter);
+     }
+     else if(this.length2<70&& this.length2<90)
+     {
+      this.valInter=112-0.75*(this.length2);
+      this.disp(this.valInter);
+     }
+     else if(this.length2<70)
+     {
+      this.valInter=75-0.5*(this.length2);
+      this.disp(this.valInter);
+     }
+      }
+
+  
+  sesameSyslength2.prototype.disp=function()
+  {
+    if(this.valInter>=75)
+      this.suitable="S1";
+
+    else if(this.valInter>50 && this.valInter<75)
+       this.suitable="S2";
+
+    else if(this.valInter>25 && this.valInter<50)
+       this.suitable="S3";
+
+    else if(this.valInter<25)
+          this.suitable="N";
+     ul2_var=this.valInter;
+    this.out="Interpolated Value : " + this.valInter + " " +  "Suitability class by sys  Model: " + this.suitable;
+    
+   }
+  }
+
+function sesameSyslength3(length3)
+  {
+    this.length3=length3;
+   
+    sesameSyslength3.prototype.interPolate=function()
+    {
+      
+      if(this.length3>150)
+      {
+        this.valInter=142.5 - 0.5*((this.length3));
+        this.disp(this.valInter);
+      }
+
+      else if(this.length3>120 && this.length3<150)
+       {
+        this.valInter= 134.6 - 0.3*(this.length3);
+        this.disp(this.valInter);
+      }
+
+      else if(this.length3>100 && this.length3<120)
+      {
+        this.valInter=210-1.25*(this.length3);
+        this.disp(this.valInter);
+     }
+     else if(this.length3>90&& this.length3<100)
+     {
+      this.valInter=195-1.5*(this.length3);
+      this.disp(this.valInter);
+     }
+     else if(this.length3<90)
+     {
+      this.valInter=100-0.5*(this.length3);
+      this.disp(this.valInter);
+     }
+      }
+
+  
+  sesameSyslength3.prototype.disp=function()
+  {
+    if(this.valInter>=75)
+      this.suitable="S1";
+
+    else if(this.valInter>50 && this.valInter<75)
+       this.suitable="S2";
+
+    else if(this.valInter>25 && this.valInter<50)
+       this.suitable="S3";
+
+    else if(this.valInter<25)
+          this.suitable="N";
+
+    ul3_var=this.valInter;
+    this.out="Interpolated Value : " + this.valInter +" " +  "Suitability class by sys  Model: " + this.suitable;
+    document.getElementById("len6").innerHTML=waterAvail.out +"<br>" + waterAvail2.out+ "<br>" + this.out;
+   }
+  }
+
+function sesameSysDrain(drainage)
+  {
+    this.drainage=drainage;
+    sesameSysDrain.prototype.findDrain=function()
+    {
+        if(this.drainage=="Well Drained")
+      {
+       this.suitable="S1";
+         this.valInter=100;
+        }
+
+        else if(this.drainage=="Moderately Well Drained")
+        {
+          this.suitable="S1";
+          this.valInter=75;
+        }
+
+        else if(this.drainage=="Imperfectly Drained")
+        {
+          this.suitable="S2";
+          this.valInter=50;
+        }
+        else if(this.drainage=="Poorly Drained")
+        {
+          this.suitable="S3";
+          this.valInter=25;
+        }
+        else if(this.drainage=="Excessively Poorly Drained")
+        {
+          this.suitable="N"
+          this.valInter=20;
+        }
+        udr_var=this.valInter;
+        this.out="Value is: " + this.valInter + " " + "Suitability class by sys  Model: " + this.suitable;
+    document.getElementById("drained").innerHTML=this.out;
+     }
+  }
+
+    function sesameSysSoil(soilText)
+   {
+    this.soilText=soilText;
+    var waterAvail=0;
+    this.waterAvail=waterAvail;
+    sesameSysSoil.prototype.findSoil=function()
+     {
+      this.soiling(this.soilText);
+     } 
+      sesameSysSoil.prototype.soiling=function()
+     {
+      
+       if(this.soilText=="l"||this.soilText=="scl"||this.soilText=="sl"||this.soilText=="sicl"||this.soilText=="cl")
+           this.waterAvail=1;
+       if(this.soilText=="sics"||this.soilText=="sil"||this.soilText=="sc")
+           this.waterAvail=2;
+         if(this.soilText=="cs"||this.soilText=="co"||this.soilText=="ls")
+          this.waterAvail=3;
+       if(this.soilText=="C>60"||this.soilText=="s")
+           this.waterAvail=4;
+      if(this.soilText=="sicm"||this.soilText=="cm"||this.soilt=="cs")
+        this.waterAvail=5;
+
+      if(this.waterAvail==1)
+         {
+          this.suitable="S1";
+          this.valInter=100;
+        }
+      else if(this.waterAvail==2)
+       {
+        this.suitable="S2";
+        this.valInter=95;
+       }
+       else if(this.waterAvail==3)
+       {
+        this.suitable="S3";
+        this.valInter=85;
+       }
+       else if(this.waterAvail==4)
+       {
+        this.suitable="N";
+        this.valInter=60;
+       }
+       else if(this.waterAvail==5)
+       {
+        this.suitable="N";
+        this.valInter=45;
+       }
+       ut_var=this.valInter;
+       this.out="Value is: " + this.valInter +" " + "Suitability class by sys  Model: " + this.suitable;
+         
+   }  
+ }
+
+ function sesameSysDepth(depth)
+  {
+    this.depth=depth;
+   
+    sesameSysDepth.prototype.interPolate=function()
+    {
+      
+      if(this.depth>75)
+      {
+        this.valInter=100 - ((this.depth - 75));
+        this.disp(this.valInter);
+      }
+
+      else if(this.depth>50 && this.depth<75)
+      {
+        this.valInter=124-0.52*(this.depth);
+        this.disp(this.valInter);
+      }
+
+        else if(this.depth>35 && this.depth<50)
+      {
+        this.valInter=85 - 5*((this.depth)/3);
+        this.disp(this.valInter);
+      }
+      else if(this.depth>25 && this.depth<35)
+        {
+          this.valInter=147.5-2.5*(this.valInter);
+          this.disp(this.valInter);
+        }
+        else if(this.depth<25)
+        {
+          this.valInter=45-(this.length2-25);
+          this.disp(this.valInter); 
+        }
+  }
+  sesameSysDepth.prototype.disp=function()
+  {
+    if(this.valInter>=75)
+          this.suitable="S1";
+        
+    else if(this.valInter>50 && this.valInter<75)
+       this.suitable="S2";
+
+    else if(this.valInter>25 && this.valInter<50)
+       this.suitable="S3";
+
+    else if(this.valInter<25)
+          this.suitable="N";
+
+     udep_var=this.valInter;
+    this.out="Interpolated Value : " + this.valInter + " "+ "Suitability class by sys  Model: " + this.suitable;
+    
+   }
+  }
+
+ function sesameSysCarbonate(calCarboante)
+  {
+    this.calCarboante=calCarboante;
+   
+    sesameSysCarbonate.prototype.interPolate=function()
+    {
+      
+      if(this.calCarboante>0 && this.calCarboante<12)
+      {
+        this.valInter=100 - 0.42*(this.calCarboante);
+        this.disp(this.valInter);
+      }
+
+      else if(this.calCarboante>12 && this.calCarboante<25)
+      {
+        this.valInter=104.23 - 0.77*((this.calCarboante));
+        this.disp(this.valInter);
+      }
+
+        else if(this.calCarboante>25 && this.calCarboante<35)
+      {
+        this.valInter=147.5 - 2.5*(this.calCarboante);
+        this.disp(this.valInter);
+      }
+      else if(this.calCarboante>35 && this.calCarboante<50)
+        {
+          this.valInter=95-(this.calCarboante);
+          this.disp(this.valInter);
+        }
+
+        else if(this.calCarboante>50)
+        {
+          this.valInter=70-0.5*(this.calCarboante);
+          this.disp(this.valInter);
+        }
+  }
+  sesameSysCarbonate.prototype.disp=function()
+  {
+    if(this.valInter>=75)
+          this.suitable="S1";
+        
+    else if(this.valInter>50 && this.valInter<75)
+       this.suitable="S2";
+
+    else if(this.valInter>25 && this.valInter<50)
+       this.suitable="S3";
+
+    else if(this.valInter<25)
+          this.suitable="N";
+
+    uca_var=this.valInter;
+    this.out="Interpolated Value : " + this.valInter + " " + "Suitability class by Sys Model: " + this.suitable;
+    
+   }
+  }
+
+function sesameSysGyp(gypsum)
+{
+  this.gypsum=gypsum;
+  sesameSysGyp.prototype.interPolate=function()
+  {
+    if(this.gypsum>0 && this.gypsum<2)
+    {
+      this.valInter=100-2.5*(this.gypsum);
+      this.disp(this.valInter);
+    }
+    else if(this.gypsum>2 && this.gypsum<4)
+    {
+      this.valInter=105-5*((this.gypsum));
+      this.disp(this.valInter);
+    }
+    else if(this.gypsum>4 && this.gypsum<10)
+    {
+      this.valInter=102.07-4.17*((this.gypsum));
+      this.disp(this.valInter);
+    }
+    else if(this.gypsum>10 &&this.gypsum<20)
+    {
+      this.valInter=75-1.5*(this.gypsum);
+      this.disp(this.valInter);
+    }
+    else if(this.gypsum>15)
+    {
+      this.valInter=60-(this.gypsum);
+      this.disp(this.valInter);
+    }
+
+  }
+    sesameSysGyp.prototype.disp=function()
+  {
+    if(this.valInter>=75)
+          this.suitable="S1";
+        
+    else if(this.valInter>50 && this.valInter<75)
+       this.suitable="S2";
+
+    else if(this.valInter>25 && this.valInter<=50)
+       this.suitable="S3";
+
+    else if(this.valInter<25)
+          this.suitable="N";
+
+    
+    ugy_var=this.valInter;
+    this.out="Interpolated Value : " + this.valInter +" " + "Suitability class by sys  Model: " + this.suitable;
+    
+    document.getElementById("gyp").innerHTML=Soil1.out+ "<br>" + deep1.out +"<br>" + calcarb.out + "<br>" +this.out;
+   }
+  }
+
+function sesameSysCec(cec)
+  {
+    this.cec=cec;
+   
+    sesameSysCec.prototype.interPolate=function()
+    {
+      if(this.cec>24)
+      {
+        this.valInter=83 + 0.5*(this.cec);
+        this.disp(this.valInter);
+      }
+      else if(this.cec>16 && this.cec<24)
+      {
+        this.valInter=65+1.25*((this.cec-24));
+        this.disp(this.valInter);
+      }
+      else if(this.cec>10 && this.cec<16)
+      {
+        this.valInter=18.33 +4.12*((this.cec-10));
+        this.disp(this.valInter);
+      }
+
+        else if(this.cec<10)
+      {
+        this.valInter=30 +3*(this.cec);
+        this.disp(this.valInter);
+      }
+      else if(this.cec==0 )
+        {
+          this.valInter=24;
+          this.disp(this.valInter);
+        }
+  }
+  sesameSysCec.prototype.disp=function()
+  {
+    if(this.valInter>=75)
+          this.suitable="S1";
+        
+    else if(this.valInter>50 && this.valInter<75)
+       this.suitable="S2";
+
+    else if(this.valInter>25 && this.valInter<50)
+       this.suitable="S3";
+
+    else if(this.valInter<25)
+          this.suitable="N";
+
+    ucec_var=this.valInter;
+    this.out="Interpolated Value : " + this.valInter + " " + "Suitability class by Sys Model: " + this.suitable;
+    
+   }
+  }
+
+function sesameSysBase(baseSaturate)
+  {
+    this.baseSaturate=baseSaturate;
+   
+    sesameSysBase.prototype.interPolate=function()
+    {
+     
+     if(this.baseSaturate>80)
+     {
+        this.valInter=75+0.25*((this.baseSaturate));
+        this.disp(this.valInter);
+      }
+
+      else if(this.baseSaturate<80 && this.baseSaturate>50)
+      {
+        this.valInter=68.6 + 0.33*((this.baseSaturate-50));
+        this.disp(this.valInter);
+      }
+
+        else if(this.baseSaturate>35 && this.baseSaturate<50)
+      {
+        this.valInter=1.67+1.67*((this.baseSaturate));
+        this.disp(this.valInter);
+      }
+
+      else if(this.baseSaturate<35)
+      {
+        this.valInter=33.75+0.75*((this.baseSaturate)/2);
+        this.disp(this.valInter);
+      }
+      else if(this.baseSaturate==0||this.baseSaturate=="")
+      {
+        this.valInter=10;
+        this.disp(this.valInter);
+      }
+            
+  }
+
+  sesameSysBase.prototype.disp=function()
+  {
+    if(this.valInter>=75)
+          this.suitable="S1";
+        
+    else if(this.valInter>50 && this.valInter<75)
+       this.suitable="S2";
+
+    else if(this.valInter>25 && this.valInter<50)
+       this.suitable="S3";
+
+    else if(this.valInter<25)
+          this.suitable="N";
+
+    ubase_var=this.valInter;
+    this.out="Interpolated Value : " + this.valInter +" " + "Suitability class by sys  Model: " + this.suitable;
+    
+   }
+  }
+
+function sesameSysOrganic(organicCarb)
+  {
+    this.organicCarb=organicCarb;
+   
+    sesameSysOrganic.prototype.interPolate=function()
+    {
+      
+      if(this.organicCarb>=1.5)
+      {
+        this.valInter=100-10*(this.organicCarb);
+        this.disp(this.valInter);
+      }
+
+      else if(this.organicCarb<1.5 && this.organicCarb>=0.8)
+      {
+        this.valInter=106.43-14.29*((this.organicCarb));
+        this.disp(this.valInter);
+      }
+
+        else if(this.organicCarb<0.8 && this.organicCarb>=0.5)
+      {
+        this.valInter=43.3-83.3*(this.organicCarb);
+        this.disp(this.valInter);
+      }
+      else if(this.organicCarb<0.5 && this.organicCarb<0.2)
+        {
+          this.valInter=70-5*(this.organicCarb);
+          this.disp(this.valInter);
+        }
+       else if(this.organicCarb<0.2)
+       {
+        this.valInter=50-50*(this.organicCarb);
+        this.disp(this.valInter);
+       } 
+  }
+  sesameSysOrganic.prototype.disp=function()
+  {
+    if(this.valInter>=75)
+          this.suitable="S1";
+        
+    else if(this.valInter>50 && this.valInter<75)
+       this.suitable="S2";
+
+    else if(this.valInter>25 && this.valInter<50)
+       this.suitable="S3";
+
+    else if(this.valInter<25)
+          this.suitable="N";
+
+    uorg_var=this.valInter;
+    this.out="Interpolated Value : " + this.valInter +  "Suitability class by sys  Model: " + this.suitable;
+    
+   }
+  }
+function sesameSyspH1(pH1)
+  {
+    this.pH1=pH1;
+   
+    sesameSyspH1.prototype.interPolate=function()
+    {
+      
+      if(this.pH1<6.3 && this.pH1>=6.2)
+      {
+        this.valInter=50*((this.pH1))-215;
+        this.disp(this.valInter);
+      }
+
+      else if(this.pH1<6.2 && this.pH1>=5.8)
+      {
+        this.valInter= 25*(this.pH1)-60;
+        this.disp(this.valInter);
+      }
+
+        else if(this.pH1>=5.5&& this.pH1<5.8)
+    {
+        this.valInter=50*(this.pH1)-205;
+        this.disp(this.valInter);
+      }
+      else if(this.pH1<5.5 && this.pH1>=5.2)
+      {
+        this.valInter=50*(this.pH1) -215;
+        this.disp(this.valInter);
+      }
+      else if(this.pH1<5.2)
+      {
+        this.valInter=42.9+0.5*((this.pH1));
+        this.disp(this.valInter);
+      }
+      
+    else if(this.pH1>=6.3 && this.pH1<6.5)
+    {
+      this.valInter=257.5-25*(this.pH1);
+      this.disp(this.valInter);
+    }
+    else if(this.pH1>=6.5 && this.pH1<7.0)
+    {
+
+      this.valInter=225-20*((this.pH1));
+      this.disp(this.valInter);
+    }
+    else if(this.pH1>=7.0 && this.pH1<7.5)
+    {
+      this.valInter=435-50*((this.pH1));
+      this.disp(this.valInter);
+    }
+    else if(this.pH1>=7.5 && this.pH1<8.2)
+    {
+      this.valInter=327.86-35.71*(this.pH1);
+      this.disp(this.valInter);
+    }
+    else if(this.pH1>8.2)
+    {
+      this.valInter=127-10*(this.pH1);
+      this.disp(this.valInter);   
+    }
+  }
+  sesameSyspH1.prototype.disp=function()
+  {
+    if(this.valInter>=75)
+          this.suitable="S1";
+        
+    else if(this.valInter>50 && this.valInter<75)
+       this.suitable="S2";
+
+    else if(this.valInter>25 && this.valInter<50)
+       this.suitable="S3";
+
+    else if(this.valInter<25)
+          this.suitable="N";
+
+
+     uph_var=this.valInter
+    this.out="Interpolated Value : " + this.valInter +" " + "Suitability class by sys  Model: " + this.suitable;
+    
+    document.getElementById("pH1").innerHTML=userEC1.out + "<br>" + base1.out + "<br>" + car1.out + "<br>" +this.out;
+  }
+  }
+
+function sesameSysEC(ec)
+{
+  this.ec=ec;
+  sesameSysEC.prototype.interPolate=function()
+  {
+    if(this.ec<1)
+    {
+      this.valInter=105-10*(this.ec);
+      this.disp(this.valInter);
+    }
+    else if(this.ec>1 && this.ec<2)
+    {
+      this.valInter=100-5*(this.ec);
+      this.disp(this.valInter);
+    }
+    else if(this.ec>2 && this.ec<3)
+    {
+      this.valInter=135-25*(this.ec);
+      this.disp(this.valInter);
+    }
+    else if(this.ec>3 &&this.ec<4)
+    {
+      this.valInter=105-15*(this.ec);
+      this.disp(this.valInter);
+    }
+    else if(this.ec>4)
+    {
+      this.valInter=65-5*(this.ec-6);
+      this.disp(this.valInter);
+    }
+
+  }
+    sesameSysEC.prototype.disp=function()
+  {
+    if(this.valInter>=75)
+          this.suitable="S1";
+        
+    else if(this.valInter>50 && this.valInter<75)
+       this.suitable="S2";
+
+    else if(this.valInter>25 && this.valInter<=50)
+       this.suitable="S3";
+
+    else if(this.valInter<25)
+          this.suitable="N";
+
+  uec_var=this.valInter;
+    this.out="Interpolated Value : " + this.valInter +" " + "Suitability class by sys  Model: " + this.suitable;
+    
+   }
+  }
+
+function sesameSysNA(naConc)
+{
+  this.naConc=naConc;
+  sesameSysNA.prototype.interPolate=function()
+  {
+    if(this.naConc>0 && this.naConc<8)
+    {
+      this.valInter=100-0.625*(this.naConc);
+      this.disp(this.valInter);
+    }
+    else if(this.naConc>8 && this.naConc<10)
+    {
+      this.valInter=135-5*((this.naConc)/3);
+      this.disp(this.valInter);
+    }
+    else if(this.naConc>10 && this.naConc<15)
+    {
+      this.valInter=135-5*((this.naConc)/4);
+      this.disp(this.valInter);
+    }
+    else if(this.naConc>15 &&this.naConc<20)
+    {
+      this.valInter=75-3*(this.naConc);
+      this.disp(this.valInter);
+    }
+    else if(this.naConc>20)
+    {
+      this.valInter=65-(this.naConc);
+      this.disp(this.valInter);
+    }
+
+  }
+    sesameSysNA.prototype.disp=function()
+  {
+    if(this.valInter>=75)
+          this.suitable="S1";
+        
+    else if(this.valInter>50 && this.valInter<75)
+       this.suitable="S2";
+
+    else if(this.valInter>25 && this.valInter<=50)
+       this.suitable="S3";
+
+    else if(this.valInter<25)
+          this.suitable="N";
+
+    una_var=this.valInter;
+    this.out="Interpolated Value : " + this.valInter +" " + "Suitability class by sys  Model: " + this.suitable;
+    document.getElementById("na").innerHTML=userEC.out + "<br>"+this.out;
+   }
+  }
+
+
+function calTopo()
+{
+  var perSlope=document.getElementById("per_slope").value;
+    alert("ds") ;
+
+  //user=new sesameSysTopo(perSlope);
+  interPolateTOPO(perSlope, arr);
+}
+
+
+function calrain1()
+{
+  var rain1=document.getElementById("rainfall").value;
+
+  user2=new sesameSysrain1(rain1);
+  user2.interPolate();
+}
+function calmean1()
+{
+  var temp1=document.getElementById("temp").value;
+
+  userMean1=new sesameSysMean1(temp1);
+  userMean1.interPolate();
+}
+
+
+function callength1()
+{
+  var length1=document.getElementById("length_growing_early").value;
+
+  waterAvail=new sesameSyslength1(length1);
+  waterAvail.interPolate();
+}
+function callength2()
+{
+  var length2=document.getElementById("length_growing_medium").value;
+
+  waterAvail2=new sesameSyslength2(length2);
+  waterAvail2.interPolate();
+}
+
+function callength3()
+{
+
+  var length3=document.getElementById("length_growing3").value;
+  waterAvail3=new sesameSyslength3(length3);
+  waterAvail3.interPolate();
+}
+
+function calcDrain()
+   {
+     var drainage=document.getElementById("drain").value; 
+     wet=new sesameSysDrain(drainage);
+     wet.findDrain();
+    }
+
+ function calcSoil()
+  {
+    var soilTexture=document.getElementById("texture").value;
+     Soil1=new sesameSysSoil(soilTexture);
+     Soil1.findSoil();
+  }
+
+function calcDepth()
+{
+  var Depth=document.getElementById("depth").value;
+  deep1=new sesameSysDepth(Depth);
+  deep1.interPolate();
+}
+
+function callcarbonate()
+{
+  var calCarboante=document.getElementById("caco3").value;
+  calcarb=new sesameSysCarbonate(calCarboante);
+  calcarb.interPolate();
+}
+
+function calcGyp()
+   {
+     var gypsum=document.getElementById("gypsum").value; 
+     userGyp=new sesameSysGyp(gypsum);
+     userGyp.interPolate();
+    }
+   
+function Cec()
+   {
+     var cec=document.getElementById("cec").value; 
+     userEC1=new sesameSysCec(cec);
+     userEC1.interPolate();
+    }
+
+   function calBase()
+{
+  var baseSaturate=document.getElementById("base_saturation").value;
+  base1=new sesameSysBase(baseSaturate);
+  base1.interPolate();
+}
+
+function calCarb()
+{
+  var organicCarb=document.getElementById("organic_carbon").value;
+  car1=new sesameSysOrganic(organicCarb);
+  car1.interPolate();
+}
+
+
+function calpH1()
+{
+  var pH1=document.getElementById("ph").value;
+
+  userpH1=new sesameSyspH1(pH1);
+  userpH1.interPolate();
+}  
+
+    function calNA()
+   {
+     var naConc=document.getElementById("na_conc").value; 
+     userNA=new sesameSysNA(naConc);
+     userNA.interPolate();
+    } 
+function callcec()
+   {
+     var ec=document.getElementById("ec_dsm").value; 
+     userEC=new sesameSysEC(ec);
+     userEC.interPolate();
+    }
+
+    function calLRI()
+{
+   lri=up_var * ( (ur_var)/100 ) * ( (um_var)/100 ) * ( (ul1_var)/100 ) * ( (ul2_var)/100 ) * ( (ul3_var)/100)
+   *( ( udr_var)/100 ) * ( ( ut_var)/100 )* ( ( udep_var)/100 ) * ( ( uca_var)/100 ) 
+   * ( ( ugy_var)/100 ) * ( (ucec_var)/100 ) * ( (ubase_var)/100 ) * ( (uorg_var)/100) 
+   * ( (uph_var)/100 ) * ( (uec_var)/100 ) * ( (una_var)/100);
+  
+  lriRatingSys(lri);
+}
+
+function lriRatingSys()
+{
+  if(lri>=75)
+  {
+    intensity="Highly Suitable";
+    Suitability="S1";
+  }
+  else if(lri>50 && lri<75)
+  {
+    intensity="Moderately Suitable";
+    Suitability="S2";
+  }
+
+  else if(lri>25&& lri<50)
+  {
+    intensity="Marginally Suitable";
+    Suitability="S3";
+  }
+
+  else if(lri<=25)
+  {
+    intensity="Conditionally Suitable";
+    Suitability="N";
+  }
+
+   out= "LRI Value is: " + lri + " Suitability is : " + intensity + "<br>" + "  Rating by Sys Model is:" + Suitability;
+   document.getElementById("result").innerHTML=out;
+  
+  
+
+</script>
