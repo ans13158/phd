@@ -788,7 +788,7 @@ function wheatLimitOrganic(organicCarb)
     wheatLimitOrganic.prototype.interPolate=function()
     {
       
-      if(this.organicCarb>=0.6 && this.organicCarb<=0.7)
+      if(this.organicCarb>=0.6 && this.organicCarb<=0.75)
       {
         this.valInter=65+50*(this.organicCarb);
         this.disp(this.valInter);
@@ -1909,7 +1909,7 @@ function wheatLimitCal(calCarboante)
 
       else if(this.cec>=10 && this.cec<16)
       {
-        this.valInter= 6.25*(this.cec) - 15;
+        this.valInter= (25/6)*(this.cec) +18.3333333333;
         this.disp(this.valInter);
       }
 
