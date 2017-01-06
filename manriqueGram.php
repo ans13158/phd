@@ -153,7 +153,7 @@
     <td width="492"><input name="base_saturation" type="text" required="required" id="base_saturation" onblur="calcbase()"/></td>
   </tr>
   <tr>
-    <td>CaCO3 equivalent (%)</td>
+    <td>CaCO<sub>3</sub> equivalent (%)</td>
     <td><input name="caco3_equivalent" type="text" required="required" id="caco3" onblur="calccarbo()" /></td>
   </tr>
   <tr>
@@ -175,7 +175,7 @@
     <td width="492"><input name="base_saturation" type="text" required="required" id="base_saturation" onblur="calcbase()" /></td>
   </tr>
   <tr>
-    <td>CaCO3 equivalent (%)</td>
+    <td>CaCO<sub>3</sub> equivalent (%)</td>
     <td><input name="caco3_equivalent" type="text" required="required" id="caco3" onblur="calccarbo()" /></td>
   </tr>
   <tr>
@@ -246,7 +246,7 @@
 
 
     <div>
-    <span id = "caco3" style = "font-size:25px;padding-right: 13em; padding-bottom:0px">Caco3 Equivalent</span>
+    <span id = "caco3" style = "font-size:25px;padding-right: 13em; padding-bottom:0px">Caco<sub>3</sub> Equivalent</span>
     <span id = "caco3_data" style = "font-size:25px; padding-right: 3em "> </span>
     <span id = "caco3_suit" style = "font-size:22px"> </span>
 

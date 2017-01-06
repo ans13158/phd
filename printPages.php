@@ -128,7 +128,7 @@ td  {
 		</tr>
 
 		<tr>
-		<td>CaCO3</td>
+		<td>CaCO<sub>3</sub></td>
 		<td>  <?php echo $param[16] ; ?> </td>
 	<td> <?php echo $param[17] ;  ?> </td>
 

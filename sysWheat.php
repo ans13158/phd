@@ -26,7 +26,7 @@
 
  
  </script>
-</head>
+</head> 
 <body>
  
 <div id="content">
@@ -277,7 +277,7 @@ Suitability criteria (Crop Requirements) for Wheat</h2>
 
 
     <div>
-    <span id = "caco3" style = "font-size:22px;padding-right: 18em;">Caco3</span>
+    <span id = "caco3" style = "font-size:22px;padding-right: 18em;">Caco<sub>3</sub></span>
     <span id = "caco3_data" style = "font-size:25px; padding-right: 3em "> </span>
     <span id = "caco3_suit" style = "font-size:22px"> </span>
 
