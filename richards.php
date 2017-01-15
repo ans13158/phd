@@ -77,7 +77,7 @@ a:active {
                 <option value="Select">Select</option>
                 <option value="Domagor">Domagor-Pahuj</option>
                 <option value="Garkhundar">Garhkundar-Dabar</option>
-                <option value="Parasi_Sindh">Parasi-Sindh</option>
+                <option value="Parasi_Sindh">Parasai-Sindh</option>
                 
             </select></td>
           </tr>

@@ -322,7 +322,7 @@ Period BunchVariety  </span>
 
 
       <br>
-      <h2 align= "center"><strong>Fertility</strong></h2>
+      <h2 align= "center"><strong>Salinity and Alkalinity</strong></h2>
 
 
     <div>

@@ -63,7 +63,7 @@ a:active {
 <!-- content begins -->
  <div id="main">
 	<div id="right">
-	  <h2>Land Rating Index</h2>
+	  <h2>Water Suitability Criteria for Irrigation</h2>
 	  <br />
 	  <form id="form1" method="post" action="">
 	    <div id="Accordion1">

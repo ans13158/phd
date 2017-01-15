@@ -113,7 +113,7 @@ td  {
 
 		</tr>	
 
-	<th colspan="3">Physical Conditions</th>	
+	<th colspan="3">Physical Condition</th>	
 		<tr>
 		<td>Texture</td>
 		<td>  <?php echo $param[12] ; ?>  </td>
@@ -163,7 +163,7 @@ td  {
 
 		</tr>
 
-	<th colspan="3">Fertility</th>	
+	<th colspan="3">Salinity and Alkalinity</th>	
 		<tr>
 		<td>E.C.</td>
 		<td>  <?php echo $param[26] ;  ?> </td>	

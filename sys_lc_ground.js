@@ -625,7 +625,8 @@ if(this.valInter>85 && this.valInter <=100)
     document.getElementById("calc").innerHTML=Soil1.out + "<br>" +deep1.out+ "<br>" + this.out;
     document.getElementById("caco3_data").innerHTML=this.valInter.toFixed(2);;
     document.getElementById("caco3_suit").innerHTML=this.suitable;
-
+    data[17] = this.suitable ;
+    
 
    }
   }

@@ -14,7 +14,7 @@ var uc2_var = '0';
 var ub_var = '0';
 var uo_var = '0';
 var up_var = '0';
-var ue_var = '0';
+var ue_var = '0 ';
 var un_var = '0';
 
 var data =[] ;
@@ -623,9 +623,9 @@ if(this.valInter>85 && this.valInter <=100)
 
      this.out="Interpolated Value : " + this.valInter + " " +  "Suitability class by Sys Model: " + this.suitable;
     document.getElementById("calc").innerHTML=Soil1.out + "<br>" +deep1.out+ "<br>" + this.out;
-    document.getElementById("caco3_data").innerHTML=this.valInter.toFixed(2);;
-    document.getElementById("caco3_suit").innerHTML=this.suitable;
-
+    document.getElementById("caco3_data").innerHTML=this.valInter.toFixed(2);
+    document.getElementById("caco3_suit").innerHTML=this.suitable
+    data[17] = this.suitable ;
 
    }
   }
