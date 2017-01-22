@@ -65,7 +65,7 @@ a:active {
 <!-- content begins -->
  <div id="main">
     <div id="right">
-      <h2>Water Suitability Criteria for Irrigation: Richards(1954)</h2>
+      <h2>Water Suitability Criteria for Irrigation</h2>
       <br />
       <div>
       <form id="form1" method="POST" action="">

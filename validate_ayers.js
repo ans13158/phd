@@ -1,7 +1,7 @@
 // *** Main function *** //
 var data = []
 
-function findClass()
+function findClassAyers()
 {
 var conductivity = document.getElementById('conductivity');
 

@@ -13,5 +13,5 @@ function select_subshed()  {
     	data[1] = "Parasai"
 
     var info = JSON.stringify(data) ;
-  window.location.assign("richardsCalc.php?query="+ info) ;
+  window.location.assign("calcWsc.php?query="+ info) ;
 } 

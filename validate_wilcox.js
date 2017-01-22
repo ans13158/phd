@@ -1,6 +1,6 @@
  // *** Main function *** //
 var data= []
-function findClass()
+function findClassWilcox()
 {
 var conductivity = document.getElementById('conductivity');
 data[0] = conductivity.value

@@ -42,7 +42,7 @@ function richards_select_shed()  {
 
 }
 
-function wilcox_select_shed()  {
+/*function wilcox_select_shed()  {
     var shed = document.getElementById("waterShed").value ;
     if(shed == "Domagor")
         window.location = "wilcox_domagor.php" ;
@@ -62,4 +62,4 @@ function ayers_select_shed()  {
      if(shed == "Parasi_Sindh")
         window.location = "ayers_parasai.php" ;
 
-}
+}*/
